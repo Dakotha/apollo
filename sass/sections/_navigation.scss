@@ -1,0 +1,199 @@
+.navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-btn {
+        position: fixed;
+        top: 8rem;
+        right: 9rem;
+        display: block;
+        width: 9rem;
+        height: 2rem;
+        font-size: 3rem;
+        cursor: pointer;
+        z-index: 1000;
+
+        @media only screen and (max-width: 768px) {
+            top: 2rem;
+            right: 2rem;
+        }
+
+        &__text {
+            @include absCenterY(0);
+            font-size: 1.8rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: #000;
+        }
+
+        &__lines {
+            @include absCenterY(6.5rem);
+            width: 2rem;
+            height: 2px;
+            background-color: #000;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 2rem;
+                height: 2px;
+                background-color: #000;
+                transition: all .2s;
+            }
+
+            &::before {
+                top: -.6rem;
+            }
+
+            &::after {
+                top: .6rem;
+            }
+        }
+
+        &__text:hover + &__lines{
+            top: -.7rem;
+            background-color: red;
+            color: green;
+        }
+    }
+
+    &__bg {
+        position: fixed;
+        top: 9rem;
+        right: 16rem;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background-color: rgba($color: #000000, $alpha: .2);
+        z-index: 999;
+        transition: all .5s;
+
+        @media only screen and (max-width: 768px) {
+            top: 3rem;
+            right: 8rem;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background-color: rgba($color: #000000, $alpha: .3);
+
+            @media only screen and (max-width: 768px) {
+                background-color: rgba($color: #000000, $alpha: .5);
+            }
+        }
+    }
+
+    & .menu {
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        list-style: none;
+        z-index: 1000;
+        opacity: 0;
+
+        @media only screen and (max-width: 768px) {
+            left: 28%;   
+        }
+
+        @media only screen and (max-width: 414px) {
+            left: 36%;
+        }
+
+        @media only screen and (max-width: 375px) {
+            left: 39%;
+        }
+
+        @media only screen and (max-width: 320px) {
+            left: 41%;
+        }
+
+        li {
+            padding: 1.5rem 2rem;
+
+            a {
+                font-size: 2rem;
+                font-weight: 700;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: #fff;
+                transition: all .3s;
+            }
+
+            &:hover a {
+                background-color: #fff;
+                color: #aaa;
+            }
+        }
+    }
+
+    .nav-toggle:checked ~ &__bg {
+        top: -30rem;
+        right: -30rem;
+        width: 90rem;
+        height: 90rem;
+
+        & .menu {
+            opacity: 1;
+        }
+    }
+
+    .nav-toggle:checked ~ &__bg::before {
+        top: -2rem;
+        left: -1rem;
+        width: 80rem;
+        height: 90rem;
+    }
+
+    .nav-toggle:checked + .nav-btn .nav-btn__text {
+        display: none;
+    }
+
+    .nav-toggle:checked + .nav-btn {
+        top: 7.5rem;
+        right: 8.5rem;
+        width: 3rem;
+        height: 3rem;
+
+        @media only screen and (max-width: 768px) {
+            top: 1.5rem;
+            right: 1.5rem;
+        }
+    }
+
+    .nav-toggle:checked + .nav-btn .nav-btn__lines {
+        left: 0;
+    }
+
+    .nav-toggle:checked + .nav-btn .nav-btn__lines {
+        background-color: rgba(#000, 0);
+    }
+
+    .nav-toggle:checked + .nav-btn .nav-btn__lines::before,
+    .nav-toggle:checked + .nav-btn .nav-btn__lines::after {
+        top: 0;
+        background-color: #fff;
+    }
+
+    .nav-toggle:checked + .nav-btn .nav-btn__lines::before {
+        transform: rotate(45deg);
+    }
+
+    .nav-toggle:checked + .nav-btn .nav-btn__lines::after {
+        transform: rotate(-45deg);
+    }
+}

@@ -1,0 +1,42 @@
+.section-2 {
+    position: relative;
+    // height: 75rem;
+
+    &__arrow-left,
+    &__arrow-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 7.5rem;
+        height: 7.5rem;
+        background-color: #fff;
+        cursor: pointer;
+        backface-visibility: hidden;
+
+        img {
+            @include absCenter;
+            transition: all .2s;
+        }
+    }
+
+    &__arrow-left {
+        left: 5rem;
+
+        &:hover > img {
+            left: 45%;
+        }
+    }
+
+    &__arrow-right {
+        right: 5rem;
+
+        &:hover > img {
+            left: 55%;
+        }
+    }
+
+    &__slide {
+        width: 100%;
+        height: auto;
+    }
+}

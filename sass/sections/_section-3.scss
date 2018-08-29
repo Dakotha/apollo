@@ -1,0 +1,63 @@
+.section-3 {
+    position: relative;
+    background-color: #efefef;
+    height: 75rem;
+
+    @media only screen and (max-width: 768px) {
+        height: 50rem;
+    }
+
+    &__box {
+        @include absCenterY(17.9rem);
+        width: 30%;
+
+        @media only screen and (max-width: 1280px) {
+            left: 10rem;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            left: 5rem;
+        }
+
+        @media only screen and (max-width: 768px) {
+            @include absCenter;
+            width: 90%;
+        }
+
+        @media only screen and (max-width: 414px) {
+            .heading-1--bold,
+            .heading-1--light {
+                font-size: 3rem;
+            }
+        }
+
+        @media only screen and (max-width: 320px) {
+            .heading-1--bold,
+            .heading-1--light {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    & > img {
+        position: absolute;
+        top: 50%;
+        right: 8.7rem;
+        transform: translateY(-50%);
+        max-width: 50%;
+        transition: all .5s;
+        
+        @media only screen and (max-width: 1440px) {
+            right: 5rem;
+        }
+
+        &:hover {
+            top: calc(50% - .3rem);
+            box-shadow: 0 2rem 4rem rgba(0, 0, 0, .2);
+        }
+
+        @media only screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+}

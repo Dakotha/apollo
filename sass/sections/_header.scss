@@ -1,0 +1,58 @@
+.header {
+    position: relative;
+    background-color: #efefef;
+    background-image: url('../img/header-photographer.jpg');
+    background-position: 95% bottom;
+    background-repeat: no-repeat;
+    background-size: auto 80%;
+    height: 75rem;
+
+    @media only screen and (max-width: 1200px) {
+        background-image: none;
+    }
+
+    @media only screen and (max-width: 768px) {
+        height: 50rem;
+    }
+
+    &__box {
+        @include absCenterY(17.9rem);
+        width: 50%;
+
+        @media only screen and (max-width: 1200px) {
+            .heading-1--bold,
+            .heading-1--light {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media only screen and (max-width: 1024px) {
+            @include absCenter;
+        }
+
+        @media only screen and (max-width: 885px) {
+            .heading-1--bold,
+            .heading-1--light {
+                font-size: 3rem;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            @include absCenter;
+            width: 90%;
+        }
+
+        @media only screen and (max-width: 320px) {
+            .heading-1--bold,
+            .heading-1--light {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__text {
+        @media only screen and (max-width: 1200px) {
+            font-size: 1.6rem;
+        }
+    }
+}

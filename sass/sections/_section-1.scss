@@ -1,0 +1,120 @@
+.section-1 {
+    position: relative;
+    background-color: #efefef;
+    height: 75rem;
+
+    @media only screen and (max-width: 768px) {
+        height: 55rem;
+    }
+
+    @media only screen and (max-width: 414px) {
+        height: 60rem;
+    }
+
+    @media only screen and (max-width: 320px) {
+        height: 70rem;
+    }
+
+    & > img {
+        @include absCenterY(8rem);
+        height: 70%;
+        transition: all .3s;
+
+        @media only screen and (max-width: 1280px) {
+            left: 2rem;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            display: none;
+        }
+
+        &:hover {
+            top: 22%;
+            transform: rotate(34deg);
+        }
+    }
+    
+    &__box {
+        position: absolute;
+        top: 50%;
+        right: 10rem;
+        transform: translateY(-50%);
+        width: 50%;
+
+        @media only screen and (max-width: 1440px) {
+            right: 5rem;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @media only screen and (max-width: 768px) {
+            @include absCenter;
+            width: 90%;
+        }
+    }
+
+    .heading-1--light {
+        position: relative;
+        padding-left: 12rem;
+
+        @media only screen and (max-width: 768px) {
+            padding-left: 6rem;
+        }
+
+        @media only screen and (max-width: 414px) {
+            padding-left: 0;
+        }
+
+        &__line {
+            @include absCenterY(0);
+            width: 8rem;
+            height: 1px;
+            background-color: #000;
+
+            @media only screen and (max-width: 768px) {
+                width: 4rem;
+            }
+
+            @media only screen and (max-width: 414px) {
+                display: none;
+            }
+        }
+    }
+
+    .heading-1--light,
+    .heading-1--bold {
+        @media only screen and (max-width: 768px) {
+            font-size: 3rem;
+        }
+
+        @media only screen and (max-width: 320px) {
+            font-size: 2rem;
+        }
+    }
+    
+    &__icon-facebook,
+    &__icon-instagram,
+    &__icon-twitter,
+    &__icon-pinterest, {
+        position: relative;
+        display: inline-block;
+        margin-right: 2rem;
+        width: 3.3rem;
+        height: 3.3rem;
+        background-color: #909090;
+        transition: all .3s;
+        backface-visibility: hidden;
+
+        img {
+            @include absCenter;
+        }
+
+        &:hover {
+            background-color: #020202;
+            // transform: rotate(360deg);
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.heading-1 {
+    font-size: 5rem;
+
+    &--bold {
+        font-weight: 700;
+    }
+
+    &--light {
+        font-weight: 100;
+    }
+}
+
+.text {
+    margin-bottom: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+}
+
+.vertical-line {
+    width: 1px;
+    height: 8rem;
+    background-color: #000;
+}
+
+.bg-big-letter {
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    font-size: 105.5rem;
+    font-weight: 700;
+    line-height: 75%;
+    color: #e3e3e3;
+    opacity: .8;
+
+    span {
+        font-size: 20rem;
+        letter-spacing: 4rem;
+    }
+}

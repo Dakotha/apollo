@@ -1,0 +1,14 @@
+{
+  "name": "apollo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass --watch sass/main.scss css/style.css",
+    "live-server": "live-server",
+
+    "dev": "run-p sass:watch live-server"
+  },
+  "author": "Robert Bednarowicz",
+  "license": "ISC"
+}
